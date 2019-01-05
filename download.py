@@ -161,7 +161,7 @@ def prepare_data_dir(path = './data'):
 if __name__ == '__main__':
     args = parser.parse_args()
     prepare_data_dir()
-    print (args.dataset)
+    print (args.datasets)
     if 'celebA' in args.datasets:
         download_celeb_a('./data')
     if 'lsun' in args.datasets:
