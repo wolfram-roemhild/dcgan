@@ -95,6 +95,7 @@ def download_celeb_a(dirpath):
 		download_file_from_google_drive(drive_id, save_path)
 
 	zip_dir = ''
+	celebcount = 0
 	with zipfile.ZipFile(save_path) as zf:
 		zip_dir = zf.namelist()[0]
 		zf.extractall(dirpath)
