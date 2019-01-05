@@ -16,6 +16,7 @@ parser.add_argument('datasets', metavar='N', type=str, nargs='+', choices=['cele
                    help='name of dataset to download [celebA, lsun, mnist]')
 
 def download(url, dirpath):
+    print("download ", url, dirpath)	
     filename = url.split('/')[-1]
     filepath = os.path.join(dirpath, filename)
     u = urllib.request.urlopen(url)
@@ -77,6 +78,7 @@ def unzip(filepath):
     os.remove(filepath)
 
 def download_celeb_a(dirpath):
+	print(" download_celeb_a", dirpath)
 	data_dir = 'celebA'
 	if os.path.exists(os.path.join(dirpath, data_dir)):
 		print('Found Celeb-A - skip')
@@ -159,7 +161,7 @@ def prepare_data_dir(path = './data'):
 if __name__ == '__main__':
     args = parser.parse_args()
     prepare_data_dir()
-
+    print (args.dataset)
     if 'celebA' in args.datasets:
         download_celeb_a('./data')
     if 'lsun' in args.datasets:
