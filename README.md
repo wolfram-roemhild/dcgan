@@ -1,6 +1,6 @@
 # DCGAN in TensorFlow
 
-TensorFlow / TensorLayer implementation of [Deep Convolutional Generative Adversarial Networks](http://arxiv.org/abs/1511.06434) which is a stabilize Generative Adversarial Networks.
+TensorFlow / TensorLayer implementation of [Deep Convolutional Generative Adversarial Networks](http://arxiv.org/abs/1511.06434) which is a stabilized Generative Adversarial Networks.
 
 Looking for Text to Image Synthesis ? [click here](https://github.com/zsdonghao/text-to-image)
 
