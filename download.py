@@ -99,12 +99,8 @@ def download_celeb_a(dirpath):
 		zip_dir = zf.namelist()[0]
 		zf.extractall(dirpath)
 	print ("dirpath", dirpath)
-	!ls
-	!ls dirpath
-	
 	os.remove(save_path)
 	os.rename(os.path.join(dirpath, zip_dir), os.path.join(dirpath, data_dir))
-	!ls dirpath
 
 
 def _list_categories(tag):
