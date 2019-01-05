@@ -86,6 +86,8 @@ def download_celeb_a(dirpath):
 
 	filename, drive_id  = "img_align_celeba.zip", "0B7EVK8r0v71pZjFTYXZWM3FlRnM"
 	save_path = os.path.join(dirpath, filename)
+	
+	print ("save_path", save_path)
 
 	if os.path.exists(save_path):
 		print('[*] {} already exists'.format(save_path))
@@ -96,8 +98,14 @@ def download_celeb_a(dirpath):
 	with zipfile.ZipFile(save_path) as zf:
 		zip_dir = zf.namelist()[0]
 		zf.extractall(dirpath)
+	print ("dirpath", dirpath)
+	!ls
+	!ls dirpath
+	
 	os.remove(save_path)
 	os.rename(os.path.join(dirpath, zip_dir), os.path.join(dirpath, data_dir))
+	!ls dirpath
+
 
 def _list_categories(tag):
     url = 'http://lsun.cs.princeton.edu/htbin/list.cgi?tag=' + tag
@@ -161,7 +169,7 @@ def prepare_data_dir(path = './data'):
 if __name__ == '__main__':
     args = parser.parse_args()
     prepare_data_dir()
-    print (args.datasets)
+    print ("download.py ", args.datasets)
     if 'celebA' in args.datasets:
         download_celeb_a('./data')
     if 'lsun' in args.datasets:
