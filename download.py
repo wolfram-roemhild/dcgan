@@ -98,7 +98,8 @@ def download_celeb_a(dirpath):
 	with zipfile.ZipFile(save_path) as zf:
 		zip_dir = zf.namelist()[0]
 		zf.extractall(dirpath)
-	print ("dirpath", dirpath)
+		celebcount += 1
+	print ("dirpath", dirpath, " celebcount", celebcount)
 	os.remove(save_path)
 	os.rename(os.path.join(dirpath, zip_dir), os.path.join(dirpath, data_dir))
 
